@@ -5,9 +5,8 @@ all= np.genfromtxt(path, delimiter=",")
 
 results=all.mean(axis=0)
 
+#print(results)
 
-    
-print(results)
-file = open("results.txt","w+")
-file.write("average")
-file.close
+file = open("results.csv","w+")
+file.write(",".join(str(value) for value in results))
+file.close()
